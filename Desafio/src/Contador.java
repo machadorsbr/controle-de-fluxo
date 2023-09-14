@@ -1,18 +1,43 @@
 import java.util.Scanner;
 
-public class Contador {
+public class Contador extends ParametrosInvalidosException {
 	public static void main(String[] args) {
-        
-        for(int contar = 12 ; contar <=30; contar ++) {
-			}
+		try {
 
-		Scanner terminal = new Scanner(System.in);
+		
+       
+		for(int contar = 12 ; contar <=30; contar ++) {
+			
+	
+			
+
+		Scanner contScanner = new Scanner(System.in);
 		System.out.println("Digite o primeiro parâmetro");
-		int parametroUm = terminal.nextInt();
+		int parametroUm = contScanner.nextInt();
 		System.out.println("Digite o segundo parâmetro");
-		int parametroDois = terminal.nextInt();
-        }
-    }
+		int parametroDois = contScanner.nextInt();
+		
+		
+			System.out.println("Primeiro parâmetro" + parametroUm);
+			System.out.println("Segundo parâmetro" + parametroDois);
+			contScanner.close();
+		}
+		
+			
+		} 
+		catch (ParametrosInvalidos e) {
+			System.out.println("O segundo parâmetro deve ser maior que o primeiro");
+
+
+			// TODO: handle exception
+		}
+	
+
+        
+	}
+}
+
+    
 		
 		//try {
 			//chamando o método contendo a lógica de contagem
